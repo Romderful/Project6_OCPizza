@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-13T16:18:20.243Z" agent="5.0 (Windows)" etag="vU1LlXIjkC4ZAphJJziM" version="14.5.10" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-13T16:19:55.505Z" agent="5.0 (Windows)" etag="E6qs0pC19NLqnWP7yscO" version="14.5.10" type="github">
   <diagram name="Page-1" id="929967ad-93f9-6ef4-fab6-5d389245f69c">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="1">
       <root>
@@ -148,7 +148,7 @@
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-32" value="+ phone_number: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
           <mxGeometry y="130" width="280" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="gdNKY9ZvcoUvKRRqnpvo-1" value="+ add_command(product)&#xa;+ remove_command(command, order_state)&#xa;+ get_command(command)&#xa;+ get_command_state(command)&#xa;&#xa;" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=#000000;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
+        <mxCell id="gdNKY9ZvcoUvKRRqnpvo-1" value="+ add_command(product, establishment)&#xa;+ remove_command(command, order_state)&#xa;+ get_command(command)&#xa;+ get_command_state(command)&#xa;&#xa;" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=#000000;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
           <mxGeometry y="156" width="280" height="80" as="geometry" />
         </mxCell>
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-78" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">

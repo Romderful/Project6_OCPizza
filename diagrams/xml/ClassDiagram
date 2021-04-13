@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-13T16:07:50.507Z" agent="5.0 (Windows)" etag="1xvoMaQ8epnJGxG4C3td" version="14.5.10" type="github">
+<mxfile host="app.diagrams.net" modified="2021-04-13T16:11:08.271Z" agent="5.0 (Windows)" etag="TS8zl1HTX7V5wpShUrNs" version="14.5.10" type="github">
   <diagram name="Page-1" id="929967ad-93f9-6ef4-fab6-5d389245f69c">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="1">
       <root>
@@ -131,7 +131,7 @@
           <mxGeometry x="690" y="437" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-66" value="User" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#d5e8d4;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="1044" y="40" width="280" height="210" as="geometry" />
+          <mxGeometry x="1044" y="40" width="280" height="236" as="geometry" />
         </mxCell>
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-67" value="+ first_name: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
           <mxGeometry y="26" width="280" height="26" as="geometry" />
@@ -142,11 +142,14 @@
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-8" value="+ email: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
           <mxGeometry y="78" width="280" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="f_-iEoCe04s7JO4_Nfrt-32" value="+ phone_number: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
+        <mxCell id="hO_u6cSrM__4Dn1QNBws-1" value="+ password: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="f_-iEoCe04s7JO4_Nfrt-66">
           <mxGeometry y="104" width="280" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="f_-iEoCe04s7JO4_Nfrt-32" value="+ phone_number: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
+          <mxGeometry y="130" width="280" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="gdNKY9ZvcoUvKRRqnpvo-1" value="+ add_command(product_id)&#xa;+ remove_command(command_id)&#xa;+ get_command(command_id)&#xa;+ get_command_state(command_id)&#xa;&#xa;" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=#000000;" parent="f_-iEoCe04s7JO4_Nfrt-66" vertex="1">
-          <mxGeometry y="130" width="280" height="80" as="geometry" />
+          <mxGeometry y="156" width="280" height="80" as="geometry" />
         </mxCell>
         <mxCell id="f_-iEoCe04s7JO4_Nfrt-78" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="1159" y="652" width="20" height="20" as="geometry" />

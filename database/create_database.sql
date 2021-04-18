@@ -15,9 +15,9 @@ DROP TABLE IF EXISTS `oc_pizza`.`command` ;
 
 CREATE TABLE IF NOT EXISTS `oc_pizza`.`command` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `establishment_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `payment_id` INT NOT NULL,
+  `establishment_id` INT NOT NULL,
   `order_state` VARCHAR(15) NOT NULL,
   `date` DATE NOT NULL,
   PRIMARY KEY (`id`),
@@ -26,23 +26,23 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`command` (
     REFERENCES `oc_pizza`.`payment` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_command_establishment1`
-    FOREIGN KEY (`establishment_id`)
-    REFERENCES `oc_pizza`.`establishment` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_command_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `oc_pizza`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_command_establishment1`
+    FOREIGN KEY (`establishment_id`)
+    REFERENCES `oc_pizza`.`establishment` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 CREATE INDEX `fk_command_payment1_idx` ON `oc_pizza`.`command` (`payment_id` ASC) VISIBLE;
 
-CREATE INDEX `fk_command_establishment1_idx` ON `oc_pizza`.`command` (`establishment_id` ASC) VISIBLE;
-
 CREATE INDEX `fk_command_user1_idx` ON `oc_pizza`.`command` (`user_id` ASC) VISIBLE;
+
+CREATE INDEX `fk_command_establishment1_idx` ON `oc_pizza`.`command` (`establishment_id` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -222,18 +222,12 @@ DROP TABLE IF EXISTS `oc_pizza`.`stock` ;
 CREATE TABLE IF NOT EXISTS `oc_pizza`.`stock` (
   `id` INT NOT NULL,
   `establishment_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
   `ingredient_id` INT NULL,
   `unit` INT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_stock_ingredient1`
     FOREIGN KEY (`ingredient_id`)
     REFERENCES `oc_pizza`.`ingredient` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_stock_product1`
-    FOREIGN KEY (`product_id`)
-    REFERENCES `oc_pizza`.`product` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_stock_establishment1`
@@ -244,8 +238,6 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`stock` (
 ENGINE = InnoDB;
 
 CREATE INDEX `fk_stock_ingredient1_idx` ON `oc_pizza`.`stock` (`ingredient_id` ASC) VISIBLE;
-
-CREATE INDEX `fk_stock_product1_idx` ON `oc_pizza`.`stock` (`product_id` ASC) VISIBLE;
 
 CREATE INDEX `fk_stock_establishment1_idx` ON `oc_pizza`.`stock` (`establishment_id` ASC) VISIBLE;
 

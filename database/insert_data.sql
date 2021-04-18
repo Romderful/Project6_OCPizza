@@ -3,11 +3,11 @@
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `oc_pizza`;
-INSERT INTO `oc_pizza`.`command` (`id`, `establishment_id`, `user_id`, `payment_id`, `order_state`, `date`) VALUES (1, 1, 1, 1, 'livree', '2021-04-1');
-INSERT INTO `oc_pizza`.`command` (`id`, `establishment_id`, `user_id`, `payment_id`, `order_state`, `date`) VALUES (2, 1, 1, 2, 'livree', '2021-04-2');
-INSERT INTO `oc_pizza`.`command` (`id`, `establishment_id`, `user_id`, `payment_id`, `order_state`, `date`) VALUES (3, 2, 2, 3, 'preparation', '2021-04-3');
-INSERT INTO `oc_pizza`.`command` (`id`, `establishment_id`, `user_id`, `payment_id`, `order_state`, `date`) VALUES (4, 2, 2, 4, 'livree', '2021-04-4');
-INSERT INTO `oc_pizza`.`command` (`id`, `establishment_id`, `user_id`, `payment_id`, `order_state`, `date`) VALUES (5, 2, 2, 5, 'preparation', '2021-04-5');
+INSERT INTO `oc_pizza`.`command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (1, 1, 1, 1, 'livree', '2021-04-1');
+INSERT INTO `oc_pizza`.`command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (2, 1, 2, 1, 'livree', '2021-04-2');
+INSERT INTO `oc_pizza`.`command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (3, 2, 3, 2, 'preparation', '2021-04-3');
+INSERT INTO `oc_pizza`.`command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (4, 2, 4, 2, 'livree', '2021-04-4');
+INSERT INTO `oc_pizza`.`command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (5, 2, 5, 2, 'preparation', '2021-04-5');
 
 COMMIT;
 
@@ -77,6 +77,8 @@ INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (2, 'chorizo');
 INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (3, 'fromage');
 INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (4, 'gruyere');
 INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (5, 'anchois');
+INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (6, 'ice_tea');
+INSERT INTO `oc_pizza`.`ingredient` (`id`, `name`) VALUES (7, 'coca_cola');
 
 COMMIT;
 
@@ -139,6 +141,8 @@ INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, 
 INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (5, 1, 1);
 INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (5, 5, 7);
 INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (5, 4, 50);
+INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (1, 6, 1);
+INSERT INTO `oc_pizza`.`product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (2, 7, 1);
 
 COMMIT;
 
@@ -148,28 +152,20 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `oc_pizza`;
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (1, 1, 1, NULL, 18);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (2, 1, 2, NULL, 15);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (3, 1, 3, 1, 12);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (4, 1, 3, 2, 32);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (5, 1, 3, 4, 14);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (6, 1, 4, 1, 45);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (7, 1, 4, 3, 34);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (8, 1, 4, 4, 55);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (9, 1, 5, 1, 34);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (10, 1, 5, 5, 76);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (11, 1, 5, 4, 23);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (12, 2, 1, NULL, 45);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (13, 2, 2, NULL, 43);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (14, 2, 3, 1, 43);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (15, 2, 3, 2, 54);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (16, 2, 3, 4, 65);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (17, 2, 4, 1, 34);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (18, 2, 4, 3, 23);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (19, 2, 4, 4, 65);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (20, 2, 5, 1, 43);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (21, 2, 5, 5, 54);
-INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `product_id`, `ingredient_id`, `unit`) VALUES (22, 2, 5, 4, 89);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (1, 1, 1, 18);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (2, 1, 2, 15);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (3, 1, 3, 13);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (4, 1, 4, 32);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (5, 1, 5, 0);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (6, 1, 6, 45);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (7, 1, 7, 34);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (8, 2, 1, 55);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (9, 2, 2, 0);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (10, 2, 3, 76);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (11, 2, 4, 70);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (12, 2, 5, 45);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (13, 2, 6, 34);
+INSERT INTO `oc_pizza`.`stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (14, 2, 7, 43);
 
 COMMIT;
 

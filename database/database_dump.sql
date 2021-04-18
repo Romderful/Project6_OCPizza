@@ -66,7 +66,7 @@ CREATE TABLE `command` (
 
 LOCK TABLES `command` WRITE;
 /*!40000 ALTER TABLE `command` DISABLE KEYS */;
-INSERT INTO `command` VALUES (1,1,1,1,'livree','2021-04-01'),(2,1,2,1,'livree','2021-04-02'),(3,2,3,2,'preparation','2021-04-03'),(4,2,4,2,'livree','2021-04-04'),(5,2,5,2,'preparation','2021-04-05');
+INSERT  IGNORE INTO `command` (`id`, `user_id`, `payment_id`, `establishment_id`, `order_state`, `date`) VALUES (1,1,1,1,'livree','2021-04-01'),(2,1,2,1,'livree','2021-04-02'),(3,2,3,2,'preparation','2021-04-03'),(4,2,4,2,'livree','2021-04-04'),(5,2,5,2,'preparation','2021-04-05');
 /*!40000 ALTER TABLE `command` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `command_has_product` (
 
 LOCK TABLES `command_has_product` WRITE;
 /*!40000 ALTER TABLE `command_has_product` DISABLE KEYS */;
-INSERT INTO `command_has_product` VALUES (1,3),(1,2),(2,5),(3,4),(4,3),(5,3),(5,3),(5,2);
+INSERT  IGNORE INTO `command_has_product` (`command_id`, `product_id`) VALUES (1,3),(1,2),(2,5),(3,4),(4,3),(5,3),(5,3),(5,2);
 /*!40000 ALTER TABLE `command_has_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,3,'caissier'),(2,4,'livreur'),(3,5,'pizzaiolo');
+INSERT  IGNORE INTO `employee` (`id`, `user_id`, `job_designation`) VALUES (1,3,'caissier'),(2,4,'livreur'),(3,5,'pizzaiolo');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +192,7 @@ CREATE TABLE `establishment` (
 
 LOCK TABLES `establishment` WRITE;
 /*!40000 ALTER TABLE `establishment` DISABLE KEYS */;
-INSERT INTO `establishment` VALUES (1,6,'0687435676'),(2,7,'0676654355');
+INSERT  IGNORE INTO `establishment` (`id`, `location_id`, `phone_number`) VALUES (1,6,'0687435676'),(2,7,'0676654355');
 /*!40000 ALTER TABLE `establishment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +219,7 @@ CREATE TABLE `establishment_has_employee` (
 
 LOCK TABLES `establishment_has_employee` WRITE;
 /*!40000 ALTER TABLE `establishment_has_employee` DISABLE KEYS */;
-INSERT INTO `establishment_has_employee` VALUES (1,1),(1,2),(1,3),(2,1),(2,2),(2,3);
+INSERT  IGNORE INTO `establishment_has_employee` (`establishment_id`, `employee_id`) VALUES (1,1),(1,2),(1,3),(2,1),(2,2),(2,3);
 /*!40000 ALTER TABLE `establishment_has_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,7 +272,7 @@ CREATE TABLE `ingredient` (
 
 LOCK TABLES `ingredient` WRITE;
 /*!40000 ALTER TABLE `ingredient` DISABLE KEYS */;
-INSERT INTO `ingredient` VALUES (1,'pate'),(2,'chorizo'),(3,'fromage'),(4,'gruyere'),(5,'anchois'),(6,'ice_tea'),(7,'coca_cola');
+INSERT  IGNORE INTO `ingredient` (`id`, `name`) VALUES (1,'pate'),(2,'chorizo'),(3,'fromage'),(4,'gruyere'),(5,'anchois'),(6,'ice_tea'),(7,'coca_cola');
 /*!40000 ALTER TABLE `ingredient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,7 +298,7 @@ CREATE TABLE `location` (
 
 LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (1,'2 avenue machin','perigueux','24000'),(2,'4 impasse truc','perigueux','24000'),(3,'8 rue du ragondin','perigueux','24000'),(4,'23 impasse des tortues','perigueux','24000'),(5,'1 rue des dauphins','perigueux','24000'),(6,'rue de la pizzera numero uno','boulazac','24750'),(7,'rue de la pizzeria numero dos','trelissac','24557');
+INSERT  IGNORE INTO `location` (`id`, `street`, `city`, `zip_code`) VALUES (1,'2 avenue machin','perigueux','24000'),(2,'4 impasse truc','perigueux','24000'),(3,'8 rue du ragondin','perigueux','24000'),(4,'23 impasse des tortues','perigueux','24000'),(5,'1 rue des dauphins','perigueux','24000'),(6,'rue de la pizzera numero uno','boulazac','24750'),(7,'rue de la pizzeria numero dos','trelissac','24557');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -323,7 +323,7 @@ CREATE TABLE `payment` (
 
 LOCK TABLES `payment` WRITE;
 /*!40000 ALTER TABLE `payment` DISABLE KEYS */;
-INSERT INTO `payment` VALUES (1,'CB',12.50),(2,'CASH',11.00),(3,'CB',12.00),(4,'CB',10.00),(5,'CASH',22.50);
+INSERT  IGNORE INTO `payment` (`id`, `payment_type`, `payment_amount`) VALUES (1,'CB',12.50),(2,'CASH',11.00),(3,'CB',12.00),(4,'CB',10.00),(5,'CASH',22.50);
 /*!40000 ALTER TABLE `payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,7 +349,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'ice_tea','boisson non gazeuse',2.00),(2,'coca_cola','boisson gazeuse',2.50),(3,'pizza_chorizo','pizza avec du chorizo',10.00),(4,'pizza_quatre_fromages','pizza avec quatre fromages',12.00),(5,'pizza_anchois','pizza avec des anchois',11.00);
+INSERT  IGNORE INTO `product` (`id`, `name`, `description`, `duty_free_price`) VALUES (1,'ice_tea','boisson non gazeuse',2.00),(2,'coca_cola','boisson gazeuse',2.50),(3,'pizza_chorizo','pizza avec du chorizo',10.00),(4,'pizza_quatre_fromages','pizza avec quatre fromages',12.00),(5,'pizza_anchois','pizza avec des anchois',11.00);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -377,7 +377,7 @@ CREATE TABLE `product_has_ingredient` (
 
 LOCK TABLES `product_has_ingredient` WRITE;
 /*!40000 ALTER TABLE `product_has_ingredient` DISABLE KEYS */;
-INSERT INTO `product_has_ingredient` VALUES (3,1,1),(3,2,5),(3,4,50),(4,1,1),(4,3,4),(4,4,50),(5,1,1),(5,5,7),(5,4,50),(1,6,1),(2,7,1);
+INSERT  IGNORE INTO `product_has_ingredient` (`product_id`, `ingredient_id`, `quantity`) VALUES (3,1,1),(3,2,5),(3,4,50),(4,1,1),(4,3,4),(4,4,50),(5,1,1),(5,5,7),(5,4,50),(1,6,1),(2,7,1);
 /*!40000 ALTER TABLE `product_has_ingredient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -422,7 +422,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,1,1,18),(2,1,2,15),(3,1,3,13),(4,1,4,32),(5,1,5,0),(6,1,6,45),(7,1,7,34),(8,2,1,55),(9,2,2,0),(10,2,3,76),(11,2,4,70),(12,2,5,45),(13,2,6,34),(14,2,7,43);
+INSERT  IGNORE INTO `stock` (`id`, `establishment_id`, `ingredient_id`, `unit`) VALUES (1,1,1,18),(2,1,2,15),(3,1,3,13),(4,1,4,32),(5,1,5,0),(6,1,6,45),(7,1,7,34),(8,2,1,55),(9,2,2,0),(10,2,3,76),(11,2,4,70),(12,2,5,45),(13,2,6,34),(14,2,7,43);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -484,13 +484,9 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Jean','Ragnotti','jean@gmail.com','abcde4546','0601010101',1),(2,'Mikael','Yukulele','mikael@gmail.com','azerty','0602020202',2),(3,'Georges','Panzani','georges@gmail.com','ohayogozaimasu','0603030303',3),(4,'Romain','Frugier','romain@gmail.com','abe14w67','0604040404',4),(5,'Brice','Venere','brice@gmail.com','hontoninanithefuck','0605050505',5);
+INSERT  IGNORE INTO `user` (`id`, `first_name`, `last_name`, `email`, `password`, `phone_number`, `location_id`) VALUES (1,'Jean','Ragnotti','jean@gmail.com','abcde4546','0601010101',1),(2,'Mikael','Yukulele','mikael@gmail.com','azerty','0602020202',2),(3,'Georges','Panzani','georges@gmail.com','ohayogozaimasu','0603030303',3),(4,'Romain','Frugier','romain@gmail.com','abe14w67','0604040404',4),(5,'Brice','Venere','brice@gmail.com','hontoninanithefuck','0605050505',5);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'oc_pizza'
---
 
 --
 -- Final view structure for view `client_informations`
@@ -645,4 +641,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-18 16:13:50
+-- Dump completed on 2021-04-18 22:08:11
